@@ -32,5 +32,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # Branch de déploiement
+          branch: gh-pages
           folder: dist/hormonia-decor
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true 
