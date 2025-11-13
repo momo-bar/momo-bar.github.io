@@ -28,7 +28,8 @@
               "src/assets",
               "src/404.html",
               "src/sitemap.xml",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/CNAME"
             ],
             "styles": [
               "node_modules/aos/dist/aos.css",
@@ -40,7 +41,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/hormoniaDecor/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
