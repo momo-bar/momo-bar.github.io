@@ -1,0 +1,107 @@
+.language-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  
+  .lang-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    opacity: 0.7;
+    
+    &:hover {
+      opacity: 1;
+      background: rgba(44, 24, 16, 0.05);
+    }
+    
+    &.active {
+      opacity: 1;
+      color: var(--accent-color);
+      font-weight: 600;
+      background: rgba(212, 175, 55, 0.1);
+    }
+    
+    .flag {
+      font-size: 1rem;
+    }
+    
+    .lang-text {
+      font-size: 0.875rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  }
+  
+  // Elegant separator
+  .separator {
+    width: 1px;
+    height: 16px;
+    background: rgba(44, 24, 16, 0.2);
+    opacity: 0.5;
+  }
+}
+
+// Responsive design for mobile/hamburger menu
+@media (max-width: 1200px) {
+  .language-switcher {
+    margin: 1rem 0;
+    justify-content: center;
+    
+    .lang-option {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      
+      &:hover {
+        background: rgba(44, 24, 16, 0.08);
+      }
+      
+      &.active {
+        background: rgba(212, 175, 55, 0.15);
+      }
+      
+      .flag {
+        font-size: 1.1rem;
+      }
+      
+      .lang-text {
+        font-size: 0.9rem;
+        letter-spacing: 0.6px;
+      }
+    }
+    
+    .separator {
+      height: 20px;
+      margin: 0 8px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .language-switcher {
+    gap: 8px;
+    
+    .lang-option {
+      padding: 8px 12px;
+      
+      .lang-text {
+        font-size: 0.8rem;
+      }
+    }
+    
+    .separator {
+      height: 16px;
+      margin: 0 4px;
+    }
+  }
+}

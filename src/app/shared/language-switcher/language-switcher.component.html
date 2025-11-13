@@ -1,0 +1,19 @@
+<div class="language-switcher">
+  <button 
+    class="lang-option"
+    [class.active]="currentLanguage === 'fr'"
+    (click)="switchLanguage('fr')">
+    <span class="flag">��</span>
+    <span class="lang-text">FR</span>
+  </button>
+  
+  <div class="separator"></div>
+  
+  <button 
+    class="lang-option"
+    [class.active]="currentLanguage === 'en'"
+    (click)="switchLanguage('en')">
+    <span class="flag">��</span>
+    <span class="lang-text">EN</span>
+  </button>
+</div>

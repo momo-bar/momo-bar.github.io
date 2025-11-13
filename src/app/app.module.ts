@@ -13,6 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 // Reusable Components
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LanguageSwitcherComponent } from './shared/language-switcher/language-switcher.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ServicesComponent,
     ContactComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,

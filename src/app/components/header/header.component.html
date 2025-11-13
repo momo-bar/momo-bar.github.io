@@ -11,23 +11,31 @@
       <!-- Desktop Navigation -->
       <ul class="nav-menu" [class.active]="isMenuOpen">
         <li class="nav-item">
-          <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a [routerLink]="isEnglish ? '/en/about' : '/a-propos'" class="nav-link" routerLinkActive="active">
+            {{ isEnglish ? 'About' : 'À Propos' }}
+          </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/about" class="nav-link" routerLinkActive="active">About</a>
+          <a [routerLink]="isEnglish ? '/en/services' : '/services'" class="nav-link" routerLinkActive="active">
+            {{ isEnglish ? 'Services' : 'Services' }}
+          </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/services" class="nav-link" routerLinkActive="active">Services</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
+          <a [routerLink]="isEnglish ? '/en/contact' : '/contact'" class="nav-link" routerLinkActive="active">
+            {{ isEnglish ? 'Contact' : 'Contact' }}
+          </a>
         </li>
       </ul>
 
       <!-- CTA Buttons -->
       <div class="nav-actions" [class.active]="isMenuOpen">
-        <a href="tel:+15551234567" class="btn-secondary nav-btn">📞 Call Now</a>
-        <a routerLink="/contact" class="btn-primary nav-btn">Get Quote</a>
+        <app-language-switcher></app-language-switcher>
+        <a href="tel:+15551234567" class="btn-secondary nav-btn">
+          📞 {{ isEnglish ? 'Call Now' : 'Appelez' }}
+        </a>
+        <a [routerLink]="isEnglish ? '/en/contact' : '/contact'" class="btn-primary nav-btn">
+          {{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}
+        </a>
       </div>
 
       <!-- Mobile Hamburger -->

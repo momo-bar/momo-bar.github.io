@@ -6,10 +6,21 @@ import { ServicesComponent } from './pages/services/services.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
+  // French routes (default - no prefix)
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'a-propos', component: AboutComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'contact', component: ContactComponent },
+  
+  // English routes (with /en prefix)
+  { path: 'en', component: HomeComponent },
+  { path: 'en/about', component: AboutComponent },
+  { path: 'en/services', component: ServicesComponent },
+  { path: 'en/contact', component: ContactComponent },
+  
+  // Legacy redirects for backward compatibility
+  { path: 'about', redirectTo: 'a-propos' },
+  
   { path: '**', redirectTo: '' } // Wildcard route for GitHub Pages compatibility
 ];
 
