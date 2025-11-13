@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Hormonia Decor | Premium Wood Panels & Architectural Solutions</title>
-  <base href="/">
+  <base href="/hormoniaDecor/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- SEO Meta Tags -->
@@ -16,15 +16,31 @@
   <meta property="og:title" content="Hormonia Decor | Premium Wood Panels & Architectural Solutions">
   <meta property="og:description" content="Transform your space with premium wood panels. Expert craftsmanship meets modern design.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://momo-bar.github.io/">
-  <meta property="og:image" content="https://momo-bar.github.io/assets/og-image.jpg">
+  <meta property="og:url" content="https://momo-bar.github.io/hormoniaDecor/">
+  <meta property="og:image" content="https://momo-bar.github.io/hormoniaDecor/assets/og-image.jpg">
   <meta property="og:site_name" content="Hormonia Decor">
   
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hormonia Decor | Premium Wood Panels">
   <meta name="twitter:description" content="Transform your space with premium wood panels. Expert craftsmanship meets modern design.">
-  <meta name="twitter:image" content="https://momo-bar.github.io/assets/twitter-image.jpg">
+  <meta name="twitter:image" content="https://momo-bar.github.io/hormoniaDecor/assets/twitter-image.jpg">
+  
+  <!-- GitHub Pages SPA redirect handling -->
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
   
   <!-- Structured Data -->
   <script type="application/ld+json">

@@ -40,7 +40,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/",
+              "baseHref": "/hormoniaDecor/",
               "budgets": [
                 {
                   "type": "initial",
