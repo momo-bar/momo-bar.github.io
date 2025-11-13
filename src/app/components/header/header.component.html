@@ -1,0 +1,41 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <a routerLink="/" class="logo-link">
+          <h2>Hormonia Decor</h2>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-menu" [class.active]="isMenuOpen">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/about" class="nav-link" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/services" class="nav-link" routerLinkActive="active">Services</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
+        </li>
+      </ul>
+
+      <!-- CTA Buttons -->
+      <div class="nav-actions" [class.active]="isMenuOpen">
+        <a href="tel:+15551234567" class="btn-secondary nav-btn">📞 Call Now</a>
+        <a routerLink="/contact" class="btn-primary nav-btn">Get Quote</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="hamburger" [class.active]="isMenuOpen" (click)="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+</header>

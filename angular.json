@@ -14,7 +14,6 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/hormonia-decor",
-            "baseHref": "/hormoniaDecor/",
             "allowedCommonJsDependencies": [
               "aos"
             ],
@@ -26,7 +25,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/404.html"
             ],
             "styles": [
               "node_modules/aos/dist/aos.css",
@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/hormoniaDecor/",
               "budgets": [
                 {
                   "type": "initial",

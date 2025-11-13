@@ -1,0 +1,333 @@
+.services-page {
+  padding-top: 80px;
+}
+
+.services-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  
+  .page-title {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// Main Services
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.service-item {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+.service-header {
+  background: linear-gradient(135deg, var(--light-color) 0%, rgba(245, 245, 220, 0.7) 100%);
+  padding: 2rem;
+  text-align: center;
+  
+  .service-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.75rem;
+  }
+}
+
+.service-content {
+  padding: 2rem;
+  
+  p {
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  
+  li {
+    padding: 0.5rem 0;
+    color: var(--gray-dark);
+    font-size: 1rem;
+    
+    &:before {
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.service-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  
+  .price-label {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+  }
+  
+  .price {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+// Process Timeline
+.process-timeline {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    
+    .timeline-content {
+      text-align: right;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column !important;
+    text-align: center;
+    
+    .timeline-content {
+      text-align: center !important;
+    }
+  }
+}
+
+.timeline-marker {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.timeline-content {
+  flex: 1;
+  
+  h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: var(--gray-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Wood Types
+.wood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.wood-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: var(--transition);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  h3 {
+    color: var(--primary-color);
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.25rem;
+  }
+  
+  p {
+    color: var(--gray-medium);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.wood-sample {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  margin: 0 auto 1rem;
+  box-shadow: var(--shadow-sm);
+  
+  &.oak { background: linear-gradient(135deg, #DEB887 0%, #CD853F 100%); }
+  &.maple { background: linear-gradient(135deg, #F5DEB3 0%, #DEB887 100%); }
+  &.cherry { background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%); }
+  &.walnut { background: linear-gradient(135deg, #654321 0%, #3E2723 100%); }
+  &.pine { background: linear-gradient(135deg, #F4A460 0%, #D2B48C 100%); }
+  &.reclaimed { background: linear-gradient(135deg, #8B4513 0%, #696969 100%); }
+}
+
+// Warranty Section
+.warranty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.warranty-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  
+  .warranty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: var(--gray-medium);
+    margin: 0;
+  }
+}
+
+// CTA Section
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  
+  h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  
+  span {
+    color: var(--secondary-color);
+    font-weight: 500;
+  }
+  
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .wood-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .wood-grid {
+    grid-template-columns: 1fr;
+  }
+}

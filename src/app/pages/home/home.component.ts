@@ -1,22 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+declare var AOS: any;
 
 @Component({
   selector: 'app-home',
-  template: `
-    <div class="page-container">
-      <h1>Home</h1>
-      <p>Welcome to the Home page</p>
-    </div>
-  `,
-  styles: [`
-    .page-container {
-      padding: 2rem;
-      text-align: center;
-    }
-    h1 {
-      color: #333;
-      margin-bottom: 1rem;
-    }
-  `]
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class HomeComponent { }
+export class HomeComponent implements OnInit {
+  ngOnInit() {
+    if (typeof AOS !== 'undefined') {
+      AOS.refresh();
+    }
+  }
+}
