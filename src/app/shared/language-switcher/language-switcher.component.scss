@@ -29,7 +29,7 @@
       opacity: 1;
       color: var(--accent-color);
       font-weight: 600;
-      background: rgba(212, 175, 55, 0.1);
+      background: rgba(26, 26, 26, 0.1);
     }
     
     .flag {
@@ -53,7 +53,7 @@
 }
 
 // Responsive design for mobile/hamburger menu
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .language-switcher {
     margin: 1rem 0;
     justify-content: center;
@@ -67,7 +67,7 @@
       }
       
       &.active {
-        background: rgba(212, 175, 55, 0.15);
+        background: rgba(26, 26, 26, 0.15);
       }
       
       .flag {

@@ -1,0 +1,35 @@
+.smart-call-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+
+  .call-icon {
+    font-size: 1rem;
+  }
+
+  .call-text {
+    font-weight: 600;
+  }
+
+
+
+  // Desktop click feedback
+  @media (min-width: 993px) {
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+// Success feedback animation for desktop copy
+.smart-call-btn.copied {
+  animation: copyFeedback 0.6s ease;
+}
+
+@keyframes copyFeedback {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); background-color: var(--success-color); }
+  100% { transform: scale(1); }
+}

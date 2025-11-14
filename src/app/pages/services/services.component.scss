@@ -3,13 +3,13 @@
 }
 
 .services-hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: white;
+  background: #1a1a1a;
+  color: #ffffff;
   padding: 4rem 0;
   text-align: center;
   
   .page-title {
-    color: white;
+    color: #ffffff !important;
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     
@@ -20,7 +20,7 @@
   
   .hero-subtitle {
     font-size: 1.25rem;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9) !important;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
@@ -58,7 +58,7 @@
   }
   
   h2 {
-    color: var(--primary-color);
+    color: #1a1a1a;
     margin: 0;
     font-size: 1.75rem;
   }
@@ -105,7 +105,7 @@
   }
   
   .price {
-    color: var(--primary-color);
+    color: #1a1a1a;
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -143,8 +143,8 @@
 }
 
 .timeline-marker {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: white;
+  background: #1a1a1a;
+  color: #ffffff;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -161,7 +161,7 @@
   flex: 1;
   
   h3 {
-    color: var(--primary-color);
+    color: #1a1a1a;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
@@ -196,7 +196,7 @@
   }
   
   h3 {
-    color: var(--primary-color);
+    color: #1a1a1a;
     margin: 1rem 0 0.5rem 0;
     font-size: 1.25rem;
   }
@@ -257,18 +257,18 @@
 
 // CTA Section
 .cta-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: white;
+  background: #1a1a1a;
+  color: #ffffff;
   
   h2 {
-    color: white;
+    color: #ffffff !important;
     margin-bottom: 1rem;
   }
   
   p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 }
 
@@ -296,7 +296,7 @@
   flex-wrap: wrap;
   
   span {
-    color: var(--secondary-color);
+    color: #ffffff !important;
     font-weight: 500;
   }
   
@@ -307,7 +307,7 @@
 }
 
 .section-title {
-  color: var(--primary-color);
+  color: #1a1a1a;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   

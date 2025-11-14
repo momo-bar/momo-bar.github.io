@@ -1,0 +1,9 @@
+<a 
+  [href]="getButtonLink()" 
+  [class]="buttonClass + ' nav-btn smart-call-btn'"
+  (click)="onDesktopClick($event)"
+  [attr.aria-label]="isMobile ? (isEnglish ? 'Call us now' : 'Appelez-nous maintenant') : 'Phone number: ' + phoneNumber"
+>
+  <span *ngIf="showIcon" class="call-icon">📞</span>
+  <span class="call-text">{{ getButtonText() }}</span>
+</a>

@@ -30,9 +30,12 @@
       <!-- CTA Buttons -->
       <div class="nav-actions" [class.active]="isMenuOpen">
         <app-language-switcher></app-language-switcher>
-        <a href="tel:+15551234567" class="btn-secondary nav-btn">
-          📞 {{ isEnglish ? 'Call Now' : 'Appelez' }}
-        </a>
+        <app-smart-call-button 
+          [buttonClass]="'btn-secondary'" 
+          [isEnglish]="isEnglish"
+          [textEn]="'Call Now'"
+          [textFr]="'Appelez'">
+        </app-smart-call-button>
         <a [routerLink]="isEnglish ? '/en/contact' : '/contact'" class="btn-primary nav-btn">
           {{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}
         </a>

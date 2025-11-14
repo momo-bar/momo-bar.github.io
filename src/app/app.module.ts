@@ -14,6 +14,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LanguageSwitcherComponent } from './shared/language-switcher/language-switcher.component';
+import { SmartCallButtonComponent } from './shared/smart-call-button/smart-call-button.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LanguageSwitcherComponent } from './shared/language-switcher/language-s
     ContactComponent,
     HeaderComponent,
     FooterComponent,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    SmartCallButtonComponent
   ],
   imports: [
     BrowserModule,

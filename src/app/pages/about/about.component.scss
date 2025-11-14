@@ -334,18 +334,18 @@
 
 // CTA Section
 .cta-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: white;
+  background: #1a1a1a;
+  color: #ffffff;
   
   h2 {
-    color: white;
+    color: #ffffff !important;
     margin-bottom: 1rem;
   }
   
   p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 }
 
@@ -448,23 +448,23 @@
   }
   
   .btn-primary {
-    background: var(--accent-color);
-    color: var(--primary-color);
+    background: #ffffff;
+    color: #1a1a1a;
     
     &:hover {
-      background: rgba(212, 175, 55, 0.9);
+      background: rgba(255, 255, 255, 0.9);
       transform: translateY(-2px);
     }
   }
   
   .btn-secondary {
     background: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: #ffffff;
+    border: 2px solid #ffffff;
     
     &:hover {
-      background: var(--white);
-      color: var(--primary-color);
+      background: #ffffff;
+      color: #1a1a1a;
       transform: translateY(-2px);
     }
   }
