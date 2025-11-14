@@ -14,13 +14,25 @@ export interface Language {
 })
 export class LanguageSwitcherComponent {
   currentLanguage: string = 'fr'; // French is now the default
+  isDropdownOpen: boolean = false;
   
   languages: Language[] = [
     { code: 'en', name: 'EN', flag: '🇺🇸' },
     { code: 'fr', name: 'FR', flag: '🇨🇦' }
   ];
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  toggleLanguage() {
+    const newLang = this.currentLanguage === 'fr' ? 'en' : 'fr';
+    this.switchLanguage(newLang);
+  }
+
   switchLanguage(langCode: string) {
+    this.isDropdownOpen = false; // Close dropdown after selection
+    
     if (langCode !== this.currentLanguage) {
       this.currentLanguage = langCode;
       localStorage.setItem('selectedLanguage', langCode);

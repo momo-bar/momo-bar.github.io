@@ -1,9 +1,32 @@
-<div class="language-switcher">
+<!-- Desktop Dropdown -->
+<div class="language-switcher desktop-dropdown">
+  <button class="dropdown-toggle" (click)="toggleDropdown()" [class.active]="isDropdownOpen">
+    <span class="current-lang">{{ currentLanguage === 'fr' ? 'FR' : 'EN' }}</span>
+    <span class="dropdown-arrow" [class.open]="isDropdownOpen">▼</span>
+  </button>
+  
+  <div class="dropdown-menu" [class.show]="isDropdownOpen">
+    <button 
+      class="dropdown-item"
+      [class.active]="currentLanguage === 'fr'"
+      (click)="switchLanguage('fr')">
+      <span class="lang-text">French</span>
+    </button>
+    <button 
+      class="dropdown-item"
+      [class.active]="currentLanguage === 'en'"
+      (click)="switchLanguage('en')">
+      <span class="lang-text">English</span>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Toggle -->
+<div class="language-switcher mobile-toggle">
   <button 
     class="lang-option"
     [class.active]="currentLanguage === 'fr'"
     (click)="switchLanguage('fr')">
-    <span class="flag">��</span>
     <span class="lang-text">FR</span>
   </button>
   
@@ -13,7 +36,6 @@
     class="lang-option"
     [class.active]="currentLanguage === 'en'"
     (click)="switchLanguage('en')">
-    <span class="flag">��</span>
     <span class="lang-text">EN</span>
   </button>
 </div>
