@@ -38,6 +38,15 @@
 }
 
 .nav-logo {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  &.hidden {
+    @media (max-width: 992px) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
   .logo-link {
     text-decoration: none;
     color: inherit;
@@ -61,6 +70,7 @@
   }
 }
 
+
 .nav-menu {
   display: flex;
   list-style: none;
@@ -71,21 +81,27 @@
   @media (max-width: 992px) {
     position: fixed;
     left: -100%;
-    top: 80px;
+    top: 0;
     flex-direction: column;
     background: white;
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 0.5rem 0;
+    padding: 4rem 0 2rem 0;
     gap: 0;
-    height: auto;
-    min-height: calc(100vh - 60px);
+    height: 100vh;
     overflow-y: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
+    // Hide scrollbar
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE and Edge
+    
+    &::-webkit-scrollbar {
+      display: none; // Chrome, Safari, Opera
+    }
 
     &.active {
       left: 0;
@@ -107,6 +123,12 @@
       display: flex;
       justify-content: center;
       margin: 0.5rem 0;
+    }
+  }
+
+  &.home-nav-item {
+    @media (max-width: 992px) {
+      margin: 0.25rem 0;
     }
   }
 }
@@ -156,6 +178,29 @@
   }
 }
 
+.home-link {
+  @media (max-width: 992px) {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem !important;
+    
+    .home-icon-svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-color);
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    &:hover {
+      .home-icon-svg {
+        color: var(--accent-color);
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
 .nav-btn-mobile {
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -166,14 +211,15 @@
   font-size: 0.85rem;
   transition: all 0.3s ease;
   white-space: nowrap;
-  background: #ffffff;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  color: #ffffff;
   border: none;
   min-width: 200px;
   text-align: center;
 
   &:hover {
     background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
     transform: translateY(-2px);
   }
 }
@@ -184,32 +230,7 @@
   gap: 0.75rem;
 
   @media (max-width: 992px) {
-    position: fixed;
-    left: -100%;
-    top: 60px;
-    width: 100%;
-    background: white;
-    padding: 0.5rem 1rem;
-    justify-content: flex-end;
-    align-items: flex-start;
-    transition: 0.3s;
-    z-index: 1001;
-    visibility: hidden;
-    opacity: 0;
-    height: auto;
-
-    &.active {
-      left: 0;
-      visibility: visible;
-      opacity: 1;
-    }
-
-    // Hide desktop elements on mobile
-    app-language-switcher,
-    app-smart-call-button,
-    .nav-btn {
-      display: none;
-    }
+    display: none;
   }
 }
 
@@ -286,13 +307,14 @@
 
 .hamburger {
   display: none;
-  flex-direction: column;
   cursor: pointer;
   padding: 0.5rem;
   flex-shrink: 0;
   min-width: 40px;
   z-index: 1002;
   position: relative;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 992px) {
     display: flex !important;
@@ -304,29 +326,45 @@
     display: flex !important;
   }
 
-  .bar {
-    width: 25px;
-    height: 3px;
-    background: var(--primary-color);
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .bar {
+      width: 25px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 3px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
   }
 
-  &.active {
-    display: none !important;
-  }
-
-  &.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-6px, 6px);
-  }
-
-  &.active .bar:nth-child(2) {
+  .close-icon {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--primary-color);
+    line-height: 1;
+    font-weight: 300;
     opacity: 0;
-  }
-
-  &.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-6px, -6px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    &:hover {
+      transform: rotate(90deg);
+      color: var(--accent-color);
+    }
   }
 }
 
