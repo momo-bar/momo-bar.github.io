@@ -3,9 +3,9 @@
   <section class="services-hero">
     <div class="container">
       <div class="hero-content text-center">
-        <h1 class="page-title" data-aos="fade-up">Our <span>Services</span></h1>
+        <h1 class="page-title" data-aos="fade-up">{{ isEnglish ? 'Our <span>Services</span>' : 'Nos <span>Services</span>' }}</h1>
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-          From custom interior paneling to handcrafted furniture, we bring your vision to life with premium wood solutions.
+          {{ isEnglish ? 'From custom interior paneling to handcrafted furniture, we bring your vision to life with premium wood solutions.' : 'De l\'habillage intérieur sur mesure aux meubles artisanaux, nous donnons vie à votre vision avec des solutions en bois premium.' }}
         </p>
       </div>
     </div>
@@ -19,21 +19,21 @@
         <div class="service-item" data-aos="fade-up" data-aos-delay="100">
           <div class="service-header">
             <div class="service-icon">🏠</div>
-            <h2>Interior Wood Paneling</h2>
+            <h2>{{ isEnglish ? 'Interior Wood Paneling' : 'Habillage Intérieur en Bois' }}</h2>
           </div>
           <div class="service-content">
-            <p>Transform your walls with our premium interior wood paneling solutions. Perfect for living rooms, bedrooms, offices, and accent walls.</p>
+            <p>{{ isEnglish ? 'Transform your walls with our premium interior wood paneling solutions. Perfect for living rooms, bedrooms, offices, and accent walls.' : 'Transformez vos murs avec nos solutions d\'habillage intérieur en bois premium. Parfait pour salons, chambres, bureaux et murs d\'accent.' }}</p>
             <ul class="service-features">
-              <li>✓ Wainscoting and beadboard</li>
-              <li>✓ Shiplap and tongue & groove</li>
-              <li>✓ Decorative wall panels</li>
-              <li>✓ Custom millwork</li>
+              <li>{{ isEnglish ? '✓ Wainscoting and beadboard' : '✓ Lambris et planche à rainures' }}</li>
+              <li>{{ isEnglish ? '✓ Shiplap and tongue & groove' : '✓ Bardage et languette rainure' }}</li>
+              <li>{{ isEnglish ? '✓ Decorative wall panels' : '✓ Panneaux muraux décoratifs' }}</li>
+              <li>{{ isEnglish ? '✓ Custom millwork' : '✓ Menuiserie sur mesure' }}</li>
             </ul>
             <div class="service-pricing">
-              <span class="price-label">Starting from</span>
-              <span class="price">$25/sq ft</span>
+              <span class="price-label">{{ isEnglish ? 'Starting from' : 'À partir de' }}</span>
+              <span class="price">${{ isEnglish ? '25/sq ft' : '25/pi²' }}</span>
             </div>
-            <a routerLink="/contact" class="btn-primary">Get Quote</a>
+            <a routerLink="/contact" class="btn-primary">{{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}</a>
           </div>
         </div>
 
@@ -41,21 +41,21 @@
         <div class="service-item" data-aos="fade-up" data-aos-delay="200">
           <div class="service-header">
             <div class="service-icon">🚪</div>
-            <h2>Custom Wooden Doors</h2>
+            <h2>{{ isEnglish ? 'Custom Wooden Doors' : 'Portes en Bois Sur Mesure' }}</h2>
           </div>
           <div class="service-content">
-            <p>Handcrafted wooden doors that make a lasting impression. From entry doors to interior doors, each piece is uniquely designed.</p>
+            <p>{{ isEnglish ? 'Handcrafted wooden doors that make a lasting impression. From entry doors to interior doors, each piece is uniquely designed.' : 'Portes en bois artisanales qui font une impression durable. Des portes d\'entrée aux portes intérieures, chaque pièce est conçue de manière unique.' }}</p>
             <ul class="service-features">
-              <li>✓ Entry and front doors</li>
-              <li>✓ Interior doors</li>
-              <li>✓ Sliding barn doors</li>
-              <li>✓ Custom hardware included</li>
+              <li>{{ isEnglish ? '✓ Entry and front doors' : '✓ Portes d\'entrée et principales' }}</li>
+              <li>{{ isEnglish ? '✓ Interior doors' : '✓ Portes intérieures' }}</li>
+              <li>{{ isEnglish ? '✓ Sliding barn doors' : '✓ Portes de grange coulissantes' }}</li>
+              <li>{{ isEnglish ? '✓ Custom hardware included' : '✓ Quincaillerie personnalisée incluse' }}</li>
             </ul>
             <div class="service-pricing">
-              <span class="price-label">Starting from</span>
-              <span class="price">$800/door</span>
+              <span class="price-label">{{ isEnglish ? 'Starting from' : 'À partir de' }}</span>
+              <span class="price">${{ isEnglish ? '800/door' : '800/porte' }}</span>
             </div>
-            <a routerLink="/contact" class="btn-primary">Get Quote</a>
+            <a routerLink="/contact" class="btn-primary">{{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}</a>
           </div>
         </div>
 

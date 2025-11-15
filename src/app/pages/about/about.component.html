@@ -4,9 +4,9 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text" data-aos="fade-up">
-          <h1 class="page-title">Where precision meets performance</h1>
+          <h1 class="page-title">{{ isEnglish ? 'Where precision meets performance' : 'Où la précision rencontre la performance' }}</h1>
           <p class="hero-subtitle">
-            At Hormonia Decor, we don't just cover surfaces—we define them. Premium materials, flawless execution, enduring results.
+            {{ isEnglish ? 'At Hormonia Decor, we don\'t just cover surfaces—we define them. Premium materials, flawless execution, enduring results.' : 'Chez Hormonia Decor, nous ne couvrons pas seulement les surfaces—nous les définissons. Matériaux premium, exécution parfaite, résultats durables.' }}
           </p>
         </div>
       </div>
@@ -18,16 +18,16 @@
     <div class="container">
       <div class="features-grid">
         <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
-          <h3>Acoustic Excellence</h3>
-          <p>Engineered for superior sound control without compromising aesthetic appeal. Our panels deliver both beauty and performance.</p>
+          <h3>{{ isEnglish ? 'Acoustic Excellence' : 'Excellence Acoustique' }}</h3>
+          <p>{{ isEnglish ? 'Engineered for superior sound control without compromising aesthetic appeal. Our panels deliver both beauty and performance.' : 'Conçu pour un contrôle sonore supérieur sans compromettre l\'attrait esthétique. Nos panneaux offrent à la fois beauté et performance.' }}</p>
         </div>
         <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
-          <h3>Effortless Installation</h3>
-          <p>Precision-engineered mounting systems ensure quick, clean installations that look professionally finished every time.</p>
+          <h3>{{ isEnglish ? 'Effortless Installation' : 'Installation Sans Effort' }}</h3>
+          <p>{{ isEnglish ? 'Precision-engineered mounting systems ensure quick, clean installations that look professionally finished every time.' : 'Systèmes de montage de précision garantissent des installations rapides et propres avec une finition professionnelle à chaque fois.' }}</p>
         </div>
         <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
-          <h3>Enduring Quality</h3>
-          <p>Premium materials and construction techniques create surfaces that maintain their beauty and functionality for decades.</p>
+          <h3>{{ isEnglish ? 'Enduring Quality' : 'Qualité Durable' }}</h3>
+          <p>{{ isEnglish ? 'Premium materials and construction techniques create surfaces that maintain their beauty and functionality for decades.' : 'Matériaux premium et techniques de construction créent des surfaces qui maintiennent leur beauté et fonctionnalité pendant des décennies.' }}</p>
         </div>
       </div>
     </div>
@@ -61,11 +61,11 @@
   <section class="cta-section section-padding">
     <div class="container">
       <div class="cta-content" data-aos="fade-up">
-        <h2>Ready to transform your space?</h2>
-        <p>Experience the difference of premium craftsmanship and modern design.</p>
+        <h2>{{ isEnglish ? 'Ready to transform your space?' : 'Prêt à transformer votre espace ?' }}</h2>
+        <p>{{ isEnglish ? 'Experience the difference of premium craftsmanship and modern design.' : 'Découvrez la différence d\'un artisanat premium et d\'un design moderne.' }}</p>
         <div class="cta-buttons">
-          <a routerLink="/services" class="btn-secondary">Explore Services</a>
-          <a routerLink="/contact" class="btn-primary">Get Quote</a>
+          <a routerLink="/services" class="btn-secondary">{{ isEnglish ? 'Explore Services' : 'Explorer les Services' }}</a>
+          <a routerLink="/contact" class="btn-primary">{{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}</a>
         </div>
       </div>
     </div>
