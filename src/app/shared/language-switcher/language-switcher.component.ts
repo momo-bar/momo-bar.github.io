@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
 
 export interface Language {
   code: string;
@@ -12,7 +13,7 @@ export interface Language {
   templateUrl: './language-switcher.component.html',
   styleUrls: ['./language-switcher.component.scss']
 })
-export class LanguageSwitcherComponent {
+export class LanguageSwitcherComponent implements OnInit {
   currentLanguage: string = 'fr'; // French is now the default
   isDropdownOpen: boolean = false;
   
@@ -21,62 +22,25 @@ export class LanguageSwitcherComponent {
     { code: 'fr', name: 'FR', flag: '🇨🇦' }
   ];
 
+  ngOnInit() {
+    // Subscribe to language changes
+    this.languageService.isEnglish$.subscribe((isEnglish: boolean) => {
+      this.currentLanguage = isEnglish ? 'en' : 'fr';
+    });
+  }
+
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
   toggleLanguage() {
-    const newLang = this.currentLanguage === 'fr' ? 'en' : 'fr';
-    this.switchLanguage(newLang);
+    this.languageService.toggleLanguage();
+    this.isDropdownOpen = false;
   }
 
   switchLanguage(langCode: string) {
     this.isDropdownOpen = false; // Close dropdown after selection
-    
-    if (langCode !== this.currentLanguage) {
-      this.currentLanguage = langCode;
-      localStorage.setItem('selectedLanguage', langCode);
-      
-      // Navigate to the appropriate language version
-      const currentRoute = window.location.pathname;
-      let newRoute = '';
-      
-      if (langCode === 'en') {
-        // Switch to English routes
-        if (currentRoute === '/' || currentRoute === '') {
-          newRoute = '/en';
-        } else if (currentRoute === '/a-propos') {
-          newRoute = '/en/about';
-        } else if (currentRoute === '/services') {
-          newRoute = '/en/services';
-        } else if (currentRoute === '/contact') {
-          newRoute = '/en/contact';
-        } else {
-          newRoute = '/en';
-        }
-      } else {
-        // Switch to French routes (default)
-        if (currentRoute.startsWith('/en')) {
-          if (currentRoute === '/en' || currentRoute === '/en/') {
-            newRoute = '/';
-          } else if (currentRoute === '/en/about') {
-            newRoute = '/a-propos';
-          } else if (currentRoute === '/en/services') {
-            newRoute = '/services';
-          } else if (currentRoute === '/en/contact') {
-            newRoute = '/contact';
-          } else {
-            newRoute = '/';
-          }
-        } else {
-          newRoute = currentRoute; // Already on French route
-        }
-      }
-      
-      if (newRoute) {
-        window.location.href = newRoute;
-      }
-    }
+    this.languageService.setLanguage(langCode === 'en');
   }
 
   getCurrentLanguage(): Language {
@@ -91,21 +55,8 @@ export class LanguageSwitcherComponent {
     return this.currentLanguage === 'fr';
   }
 
-  constructor(private router: Router) {
-    // Detect current language from URL
-    const currentPath = window.location.pathname;
-    if (currentPath.startsWith('/en')) {
-      this.currentLanguage = 'en';
-    } else {
-      this.currentLanguage = 'fr';
-    }
-    
-    // Load saved language or use detected language
-    const savedLang = localStorage.getItem('selectedLanguage');
-    if (savedLang && this.languages.find(lang => lang.code === savedLang)) {
-      this.currentLanguage = savedLang;
-    } else {
-      localStorage.setItem('selectedLanguage', this.currentLanguage);
-    }
-  }
+  constructor(
+    private router: Router,
+    private languageService: LanguageService
+  ) {}
 }

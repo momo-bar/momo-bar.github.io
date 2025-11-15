@@ -3,7 +3,7 @@
   <section class="services-hero">
     <div class="container">
       <div class="hero-content text-center">
-        <h1 class="page-title" data-aos="fade-up">{{ isEnglish ? 'Our <span>Services</span>' : 'Nos <span>Services</span>' }}</h1>
+        <h1 class="page-title" data-aos="fade-up" [innerHTML]="isEnglish ? 'Our <span>Services</span>' : 'Nos <span>Services</span>'"></h1>
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
           {{ isEnglish ? 'From custom interior paneling to handcrafted furniture, we bring your vision to life with premium wood solutions.' : 'De l\'habillage intérieur sur mesure aux meubles artisanaux, nous donnons vie à votre vision avec des solutions en bois premium.' }}
         </p>

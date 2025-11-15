@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -22,21 +23,19 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  private detectLanguage() {
-    const currentPath = window.location.pathname;
-    this.isEnglish = currentPath.startsWith('/en');
-  }
-
   ngOnInit() {
-    this.detectLanguage();
-    
-    // Listen for route changes to update language detection
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.detectLanguage();
+    // Subscribe to language changes
+    this.languageService.isEnglish$.subscribe(isEnglish => {
+      this.isEnglish = isEnglish;
     });
   }
 
-  constructor(private router: Router) { }
+  toggleLanguage() {
+    this.languageService.toggleLanguage();
+  }
+
+  constructor(
+    private router: Router,
+    private languageService: LanguageService
+  ) { }
 }

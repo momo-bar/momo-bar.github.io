@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,21 +9,12 @@ import { filter } from 'rxjs/operators';
 export class FooterComponent implements OnInit {
   isEnglish = false;
 
-  constructor(private router: Router) { }
-
-  private detectLanguage() {
-    const currentPath = window.location.pathname;
-    this.isEnglish = currentPath.startsWith('/en');
-  }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit() {
-    this.detectLanguage();
-    
-    // Listen for route changes to update language detection
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.detectLanguage();
+    // Subscribe to language changes
+    this.languageService.isEnglish$.subscribe((isEnglish: boolean) => {
+      this.isEnglish = isEnglish;
     });
   }
 }

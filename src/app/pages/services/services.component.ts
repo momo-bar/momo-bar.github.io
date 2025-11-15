@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { LanguageService } from '../../services/language.service';
 
 declare var AOS: any;
 
@@ -11,11 +11,13 @@ declare var AOS: any;
 export class ServicesComponent implements OnInit {
   isEnglish: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private languageService: LanguageService) {}
 
   ngOnInit() {
-    // Check if current route is English
-    this.isEnglish = this.router.url.startsWith('/en');
+    // Subscribe to language changes
+    this.languageService.isEnglish$.subscribe((isEnglish: boolean) => {
+      this.isEnglish = isEnglish;
+    });
     
     if (typeof AOS !== 'undefined') {
       AOS.refresh();
