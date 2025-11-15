@@ -25,6 +25,23 @@
             {{ isEnglish ? 'Contact' : 'Contact' }}
           </a>
         </li>
+        <!-- Mobile Only Elements -->
+        <li class="nav-item mobile-only">
+          <app-language-switcher></app-language-switcher>
+        </li>
+        <li class="nav-item mobile-only">
+          <app-smart-call-button 
+            [buttonClass]="'btn-secondary'" 
+            [isEnglish]="isEnglish"
+            [textEn]="'Call Now'"
+            [textFr]="'Appelez'">
+          </app-smart-call-button>
+        </li>
+        <li class="nav-item mobile-only">
+          <a [routerLink]="isEnglish ? '/en/contact' : '/contact'" class="btn-primary nav-btn-mobile">
+            {{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}
+          </a>
+        </li>
       </ul>
 
       <!-- CTA Buttons -->
