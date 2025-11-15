@@ -66,15 +66,20 @@
   @media (max-width: 992px) {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 80px;
     flex-direction: column;
     background: white;
     width: 100%;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 2rem 0;
+    padding: 0;
     gap: 0;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.active {
       left: 0;
@@ -85,6 +90,8 @@
 .nav-item {
   @media (max-width: 992px) {
     margin: 1rem 0;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -122,13 +129,13 @@
 
   @media (max-width: 992px) {
     font-size: 1.1rem;
-    padding: 1rem 0;
-    display: block;
-    width: 100%;
+    padding: 1rem 2rem;
+    display: inline-block;
+    width: auto;
+    text-align: center;
 
     &.active {
-      background: var(--gray-light);
-      color: var(--primary-color);
+      color: var(--accent-color);
     }
   }
 }
@@ -144,10 +151,11 @@
     bottom: 0;
     width: 100%;
     background: white;
-    padding: 1.5rem;
+    padding: 0 0.5rem;
     justify-content: center;
     border-top: 1px solid var(--gray-light);
     transition: 0.3s;
+    z-index: 1001;
 
     &.active {
       left: 0;
@@ -172,6 +180,36 @@
   }
 }
 
+.close-menu-btn {
+  display: none;
+  
+  @media (max-width: 992px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+
+    span {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      line-height: 1;
+      font-weight: 300;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      span {
+        transform: rotate(90deg);
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -192,7 +230,7 @@
   }
 
   &.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
   }
 
   &.active .bar:nth-child(2) {
@@ -200,7 +238,7 @@
   }
 
   &.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-6px, -6px);
   }
 }
 
@@ -230,7 +268,7 @@
 .nav-link:focus,
 .nav-btn:focus,
 .hamburger:focus {
-  outline: 2px solid var(--accent-color);
+  // outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 

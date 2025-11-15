@@ -27,7 +27,9 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { 
     useHash: false, // For GitHub Pages, we'll handle this with base href
-    enableTracing: false 
+    enableTracing: false,
+    scrollPositionRestoration: 'enabled', // Restores scroll position on back/forward, scrolls to top on new navigation
+    anchorScrolling: 'enabled'
   })],
   exports: [RouterModule]
 })

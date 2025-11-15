@@ -39,6 +39,9 @@
         <a [routerLink]="isEnglish ? '/en/contact' : '/contact'" class="btn-primary nav-btn">
           {{ isEnglish ? 'Get Quote' : 'Devis Gratuit' }}
         </a>
+        <button class="close-menu-btn" (click)="toggleMenu()">
+          <span>&times;</span>
+        </button>
       </div>
 
       <!-- Mobile Hamburger -->
