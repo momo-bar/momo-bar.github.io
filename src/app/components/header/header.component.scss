@@ -30,6 +30,11 @@
   @media (max-width: 768px) {
     padding: 0 1rem;
   }
+
+  @media (max-width: 480px) {
+    padding: 0 0.75rem;
+    min-height: 60px;
+  }
 }
 
 .nav-logo {
@@ -156,9 +161,13 @@
     border-top: 1px solid var(--gray-light);
     transition: 0.3s;
     z-index: 1001;
+    visibility: hidden;
+    opacity: 0;
 
     &.active {
       left: 0;
+      visibility: visible;
+      opacity: 1;
     }
   }
 }
@@ -192,6 +201,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    opacity: 1;
 
     span {
       font-size: 1.8rem;
@@ -208,6 +218,11 @@
       }
     }
   }
+
+  // Ensure it's completely hidden when menu is closed
+  .nav-actions:not(.active) & {
+    display: none !important;
+  }
 }
 
 .hamburger {
@@ -215,9 +230,19 @@
   flex-direction: column;
   cursor: pointer;
   padding: 0.5rem;
+  flex-shrink: 0;
+  min-width: 40px;
+  z-index: 1002;
+  position: relative;
 
   @media (max-width: 992px) {
-    display: flex;
+    display: flex !important;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.25rem;
+    min-width: 35px;
+    display: flex !important;
   }
 
   .bar {
